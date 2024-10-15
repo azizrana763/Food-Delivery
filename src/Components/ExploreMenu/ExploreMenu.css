@@ -2,7 +2,7 @@
     flex-direction: column;
     display: flex;
     gap: 20px;
-
+    overflow: hidden; /* Prevent overflow */
 }
 
 .ExploreMenu h1 {
@@ -17,25 +17,29 @@
 
 .ExploreMenu-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align items to the start */
     align-items: center;
-    gap: 30px;
+    gap: 20px; /* Reduce gap to prevent overflow */
     text-align: center;
     margin: 20px 0px;
-    overflow-x: scroll;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 10px 0; /* Add padding for aesthetics */
 }
 
 .ExploreMenu-list::-webkit-scrollbar {
-    display: none;
+    display: none; /* Hide scrollbar */
+}
+
+.ExploreMenu-list-item {
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
 }
 
 .ExploreMenu-list-item img {
-    width: 7.5vw;
-    min-width: 80px;
+    width: 100%; /* Full width within the item */
+    max-width: 80px; /* Limit max width for images */
     cursor: pointer;
     border-radius: 50%;
     transition: 0.2s;
-
 }
 
 .ExploreMenu-list-item p {
@@ -57,9 +61,54 @@
     padding: 2px;
 }
 
-@media (max-width:1050px) {
+/* Media Queries for Responsiveness */
+@media (max-width: 1050px) {
     .ExploreMenu-text {
         max-width: 100%;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ExploreMenu {
+        gap: 15px;
+    }
+
+    .ExploreMenu h1 {
+        font-size: 24px; /* Adjust heading size for smaller screens */
+    }
+
+    .ExploreMenu-text {
+        font-size: 12px; /* Smaller text */
+    }
+
+    .ExploreMenu-list {
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
+
+    .ExploreMenu-list-item img {
+        max-width: 60px; /* Adjust max width for images */
+    }
+
+    .ExploreMenu-list-item p {
+        font-size: 12px; /* Adjust font size for items */
+    }
+}
+
+@media (max-width: 480px) {
+    .ExploreMenu h1 {
+        font-size: 20px; /* Further reduce heading size */
+    }
+
+    .ExploreMenu-list-item img {
+        max-width: 50px; /* Further reduce image size */
+    }
+
+    .ExploreMenu-list-item p {
+        font-size: 10px; /* Smaller text for very small screens */
+    }
+
+    .ExploreMenu-text {
+        font-size: 10px; /* Ensure text remains legible */
     }
 }
