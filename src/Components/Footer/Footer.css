@@ -1,4 +1,4 @@
-.Footer{
+.Footer {
     color: #d9d9d9;
     background-color: #323232;
     display: flex;
@@ -9,48 +9,73 @@
     padding-top: 80px;
     margin-top: 100px;
 }
-.Footer-content{
+
+.Footer-content {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr ;
+    grid-template-columns: repeat(3, 1fr);
     gap: 80px;
 }
-.Footer-content-left img{
+
+.Footer-content-left img {
     width: 25%;
 }
-.Footer-content-left , .Footer-content-Right ,.Footer-content-center{
+
+.Footer-content-left, .Footer-content-center, .Footer-content-right {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start; /* Changed from start to flex-start for clarity */
     gap: 20px;
 }
-.Footer-content-left li, .Footer-content-Right li ,.Footer-content-center li{
+
+.Footer-content-left li, .Footer-content-right li, .Footer-content-center li {
     list-style-type: none;
     margin-bottom: 10px;
     cursor: pointer;
 }
-.Footer-content-left h2 , .Footer-content-Right h2 ,.Footer-content-center h2{
-  color: white;
+
+.Footer-content-left h2, .Footer-content-right h2, .Footer-content-center h2 {
+    color: white;
 }
-.Footer-social-icons img{
+
+.Footer-social-icons img {
     width: 40px;
     margin-right: 15px;
 }
-.Footer hr{
+
+.Footer hr {
     width: 100%;
     height: 2px;
     margin: 20px 0;
     background-color: gray;
     border: none;
 }
-@media (max-width:750px) {
-    .Footer-content{
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .Footer-content {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .Footer-Copyright{
+}
+
+@media (max-width: 900px) {
+    .Footer-content {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        gap: 20px; /* Adjust gap for smaller screens */
+    }
+}
+
+@media (max-width: 750px) {
+    .Footer-Copyright {
         text-align: center;
     }
-    
+
+    .Footer-content-left img {
+        width: 50%; /* Increase image size for better visibility on small screens */
+    }
+
+    .Footer-social-icons img {
+        width: 30px; /* Slightly smaller icons */
+        margin-right: 10px;
+    }
 }

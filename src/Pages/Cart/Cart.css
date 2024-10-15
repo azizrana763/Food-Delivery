@@ -89,13 +89,34 @@
     border-radius: 4px;
     cursor: pointer;
 }
-@media (max-width:750px) {
-    .cart-bottom{
-        flex-direction: column-reverse;
+@media (max-width: 1200px) {
+    .Cart-items-title {
+        grid-template-columns: repeat(10, 0.5fr);
     }
-    .cart-promocode{
-        justify-content: start;
+}
+
+@media (max-width: 900px) {
+    .Cart-items-title {
+        grid-template-columns: repeat(9, 0.5fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .Cart-items-title {
+        grid-template-columns: repeat(7, 2fr); /* Reduce to two columns for small screens */
     }
     
+    .cart-bottom {
+        flex-direction: column; /* Stack elements vertically */
+    }
+    
+    .cart-promocode {
+        justify-content: flex-start;
+    }
+
+    .cart-total button {
+        width: 100%; /* Make button full width on small screens */
+    }
 }
+
 

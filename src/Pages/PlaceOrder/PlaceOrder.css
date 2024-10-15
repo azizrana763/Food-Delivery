@@ -33,3 +33,39 @@
 .place-order .cart-total button{
     margin-top: 30px;
 }
+@media (max-width: 1200px) {
+    .place-order-left {
+        max-width: 40%; /* Adjust for medium screens */
+    }
+
+    .place-order-right {
+        max-width: 50%; /* Adjust for medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .place-order-left,
+    .place-order-right {
+        max-width: 100%; /* Stack on small screens */
+    }
+
+    .place-order {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 30px; /* Reduce gap */
+    }
+}
+
+@media (max-width: 600px) {
+    .place-order-left .title {
+        font-size: 24px; /* Smaller title for smaller screens */
+    }
+
+    .place-order-left input {
+        padding: 8px; /* Smaller padding for inputs */
+    }
+
+    .place-order .cart-total button {
+        width: 100%; /* Make button full width */
+        padding: 12px; /* Adjust padding */
+    }
+}
